@@ -16,5 +16,12 @@ public class Task {
     private String title;
     private boolean completed = false;
 
-    
+    /**
+     * Constructor of the class
+     */
+    public Task(UUID id, String title, Boolean completed){
+        this.id = id;
+        this.title= title;
+        this.completed = completed;
+    }
 }
