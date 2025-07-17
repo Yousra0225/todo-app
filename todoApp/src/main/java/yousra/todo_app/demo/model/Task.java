@@ -1,4 +1,4 @@
-package yousra.todo_app.demo.Model;
+package yousra.todo_app.demo.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
