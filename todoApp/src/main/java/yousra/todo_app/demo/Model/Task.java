@@ -24,4 +24,23 @@ public class Task {
         this.title= title;
         this.completed = completed;
     }
+
+    /**
+     * Getters
+     */
+    public UUID getId() { return this.id; }
+    public String getTitle() { return this.title; }
+
+    /**
+     * Setters
+     */
+    public void setId(UUID id) { this.id = id; }
+    public void setTitle(String title) { this.title = title; }
+    public void setCompleted(boolean completed) { this.completed = completed; }
+
+    /**
+     * Method to check if a task is completed
+     * @return true if a task is completed and false otherwise
+     */
+    public boolean isCompleted() { return completed; }
 }
