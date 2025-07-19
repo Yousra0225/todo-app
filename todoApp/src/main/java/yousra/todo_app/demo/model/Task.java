@@ -43,4 +43,12 @@ public class Task {
      * @return true if a task is completed and false otherwise
      */
     public boolean isCompleted() { return completed; }
+
+    public String toString() {
+        return "Article{" +
+                "id=" + this.id +
+                ", title='" + this.title + '\'' +
+                ", status=" + this.completed +
+                '}';
+    }
 }
