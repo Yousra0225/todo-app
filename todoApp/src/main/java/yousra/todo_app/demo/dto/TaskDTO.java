@@ -19,5 +19,9 @@ public class TaskDTO {
     public void setId(UUID id){this.id = id;}
     public void setName(String name){this.name=name;}
 
-    
+    /**
+     * Method to check the status of a task
+     * @return true if as task is completed and false otherwise
+     */
+    public boolean isCompleted(){return this.status;}
 }
