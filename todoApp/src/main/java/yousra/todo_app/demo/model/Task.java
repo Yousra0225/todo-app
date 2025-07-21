@@ -1,9 +1,6 @@
 package yousra.todo_app.demo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.UUID;
 
@@ -11,9 +8,11 @@ import java.util.UUID;
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column
     private UUID id;
-
+    @Column
     private String title;
+    @Column
     private boolean completed = false;
 
     /**
@@ -23,6 +22,11 @@ public class Task {
         this.id = id;
         this.title= title;
         this.completed = completed;
+    }
+    public Task(){
+        this.id = id;
+        this.title = title;
+        this.completed = false;
     }
 
     /**
