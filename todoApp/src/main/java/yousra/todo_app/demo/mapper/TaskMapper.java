@@ -1,8 +1,9 @@
 package yousra.todo_app.demo.mapper;
 
+import org.springframework.stereotype.Component;
 import yousra.todo_app.demo.dto.TaskDTO;
 import yousra.todo_app.demo.model.Task;
-
+@Component
 public class TaskMapper {
 
     /**
