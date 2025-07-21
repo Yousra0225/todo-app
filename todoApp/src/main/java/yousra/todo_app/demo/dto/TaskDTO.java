@@ -24,4 +24,12 @@ public class TaskDTO {
      * @return true if as task is completed and false otherwise
      */
     public boolean isCompleted(){return this.status;}
+
+    public String toString(){
+        return "Task{" +
+                "id=" + this.id +
+                ", title='" + this.name + '\'' +
+                ", status=" + this.status +
+                '}';
+    }
 }

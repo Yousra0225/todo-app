@@ -49,7 +49,7 @@ public class Task {
     public boolean isCompleted() { return completed; }
 
     public String toString() {
-        return "Article{" +
+        return "Task{" +
                 "id=" + this.id +
                 ", title='" + this.title + '\'' +
                 ", status=" + this.completed +
