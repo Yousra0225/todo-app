@@ -18,5 +18,9 @@ public class TaskMapper {
         return taskDTO;
     }
 
+    public Task toTask(TaskDTO taskDTO){
+        return new Task(taskDTO.getId(),taskDTO.getName(),taskDTO.isCompleted());
+    }
+
 
 }
