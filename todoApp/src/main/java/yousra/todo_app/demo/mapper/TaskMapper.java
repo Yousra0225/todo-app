@@ -4,7 +4,6 @@ import yousra.todo_app.demo.dto.TaskDTO;
 import yousra.todo_app.demo.model.Task;
 
 public class TaskMapper {
-    TaskDTO taskDTO = new TaskDTO();
 
     /**
      * Method to transfer task to dto task format
@@ -12,6 +11,7 @@ public class TaskMapper {
      * @return taskDTO task in dto format
      */
     public TaskDTO toTaskDTO(Task task){
+        TaskDTO taskDTO = new TaskDTO();
         taskDTO.setId(task.getId());
         taskDTO.setName(task.getTitle());
         taskDTO.setStatus(task.getStatus());
