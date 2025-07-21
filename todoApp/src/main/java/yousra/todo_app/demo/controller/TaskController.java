@@ -3,33 +3,21 @@ package yousra.todo_app.demo.controller;
 import org.springframework.web.bind.annotation.*;
 import yousra.todo_app.demo.model.Task;
 import yousra.todo_app.demo.repository.TaskRepository;
+import yousra.todo_app.demo.service.TaskService;
 
 import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/tasks")
+@RequestMapping("/api/task")
 @CrossOrigin(origins = "*")
 public class TaskController {
 
-    private final TaskRepository taskRepo;
+    private final TaskService taskService;
 
-    public TaskController(TaskRepository taskRepo) {
-        this.taskRepo = taskRepo;
-    }
+    /**
+     * Constructor of the class
+     */
+    public TaskController(TaskService taskService){this.taskService=taskService;}
 
-    @GetMapping
-    public List<Task> getAllTasks() {
-        return taskRepo.findAll();
-    }
-
-    @PostMapping
-    public Task createTask(@RequestBody Task task) {
-        return taskRepo.save(task);
-    }
-
-    @DeleteMapping("/{id}")
-    public void deleteTask(@PathVariable UUID id) {
-        taskRepo.deleteById(id);
-    }
 }
