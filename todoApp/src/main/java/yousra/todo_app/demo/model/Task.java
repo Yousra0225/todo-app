@@ -12,21 +12,20 @@ public class Task {
     private UUID id;
     @Column
     private String title;
-    @Column
-    private boolean completed = false;
+    //@Column
+    //private boolean completed = false;
 
     /**
      * Constructor of the class
      */
-    public Task(UUID id, String title, Boolean completed){
+    public Task(UUID id, String title){
         this.id = id;
         this.title= title;
-        this.completed = completed;
+        //this.completed = completed;
     }
     public Task(){
         this.id = id;
         this.title = title;
-        this.completed = false;
     }
 
     /**
@@ -34,25 +33,26 @@ public class Task {
      */
     public UUID getId() { return this.id; }
     public String getTitle() { return this.title; }
+   // public boolean getStatus(){return this.completed;}
 
     /**
      * Setters
      */
     public void setId(UUID id) { this.id = id; }
     public void setTitle(String title) { this.title = title; }
-    public void setCompleted(boolean completed) { this.completed = completed; }
+   // public void setCompleted(boolean completed) { this.completed = completed; }
 
     /**
      * Method to check if a task is completed
      * @return true if a task is completed and false otherwise
      */
-    public boolean isCompleted() { return completed; }
+    //public boolean isCompleted() { return completed; }
 
     public String toString() {
         return "Task{" +
                 "id=" + this.id +
                 ", title='" + this.title + '\'' +
-                ", status=" + this.completed +
+                ", status="  +
                 '}';
     }
 }
