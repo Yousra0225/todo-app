@@ -1,6 +1,8 @@
 package yousra.todo_app.demo.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import yousra.todo_app.demo.dto.TaskDTO;
 import yousra.todo_app.demo.model.Task;
 import yousra.todo_app.demo.repository.TaskRepository;
 import yousra.todo_app.demo.service.TaskService;
@@ -18,6 +20,11 @@ public class TaskController {
     /**
      * Constructor of the class
      */
+    @Autowired
     public TaskController(TaskService taskService){this.taskService=taskService;}
 
+    @GetMapping
+    public TaskDTO getTaskName(@RequestParam UUID taskId){
+        return this.taskService.getName();
+    }
 }
