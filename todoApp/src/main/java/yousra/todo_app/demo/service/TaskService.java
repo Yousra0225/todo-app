@@ -7,11 +7,7 @@ import yousra.todo_app.demo.dto.TaskDTO;
 import yousra.todo_app.demo.mapper.TaskMapper;
 import yousra.todo_app.demo.model.Task;
 import yousra.todo_app.demo.repository.TaskRepository;
-
-import java.util.Optional;
 import java.util.UUID;
-
-import static com.fasterxml.jackson.databind.jsonFormatVisitors.JsonValueFormat.UUID;
 
 @Service
 public class TaskService {
@@ -25,6 +21,11 @@ public class TaskService {
         this.taskRepository = taskRepository;
     }
 
+    /**
+     * Method to get a task by its id
+     * @param taskId
+     * @return
+     */
     public Task getTask(UUID taskId) {
         return taskRepository.findById(taskId).orElseThrow(() -> new EntityNotFoundException("error: task not found"));
     }
@@ -32,4 +33,6 @@ public class TaskService {
     public void addTask(TaskDTO taskDTO){
         taskRepository.save(taskMapper.toTask(taskDTO));
     }
+
+    //yousra.todo_app.demo.model.Task task = new Task;
 }
