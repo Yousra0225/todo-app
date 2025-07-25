@@ -18,12 +18,12 @@ public class TaskMapper {
         TaskDTO taskDTO = new TaskDTO();
         taskDTO.setId(task.getId());
         taskDTO.setName(task.getTitle());
-        //taskDTO.setStatus(task.getStatus());
+        taskDTO.setStatus(task.getStatus());
         return taskDTO;
     }
 
     public Task toTask(TaskDTO taskDTO){
-        return new Task(taskDTO.getId(),taskDTO.getName());
+        return new Task(taskDTO.getId(),taskDTO.getName(), taskDTO.getStatus());
     }
 
 
