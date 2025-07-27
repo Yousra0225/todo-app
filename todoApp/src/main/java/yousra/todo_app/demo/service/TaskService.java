@@ -49,5 +49,10 @@ public class TaskService {
         taskRepository.delete(task);
     }
 
-
+    public void updateTask(UUID id, TaskDTO taskDTO){
+        Task task = taskRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("error: task not found"));
+        task.setTitle(taskDTO.getName());
+        task.setStatus(taskDTO.getStatus());
+        taskRepository.save(task);
+    }
 }
