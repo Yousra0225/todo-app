@@ -35,4 +35,9 @@ public class TaskService {
     }
 
     //yousra.todo_app.demo.model.Task task = new Task;
+
+    public void deleteTask(UUID id){
+        Task task = taskRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("error: task not found"));
+        taskRepository.delete(task);
+    }
 }
