@@ -30,14 +30,24 @@ public class TaskService {
         return taskRepository.findById(taskId).orElseThrow(() -> new EntityNotFoundException("error: task not found"));
     }
 
+    /**
+     *
+     * @param taskDTO
+     */
     public void addTask(TaskDTO taskDTO){
         taskRepository.save(taskMapper.toTask(taskDTO));
     }
 
     //yousra.todo_app.demo.model.Task task = new Task;
 
+    /**
+     * Method to delete a task by its id
+     * @param id
+     */
     public void deleteTask(UUID id){
         Task task = taskRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("error: task not found"));
         taskRepository.delete(task);
     }
+
+
 }
